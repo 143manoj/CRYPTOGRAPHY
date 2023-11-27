@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+
+void decryptPlayfair(char ciphertext[], char key[]) {
+    
+    
+    printf("Decrypted message: %s\n", ciphertext); // Placeholder output
+}
+
+int main() {
+    char ciphertext[1000];
+    char key[25]; // Your Playfair key
+
+    printf("Enter the Playfair-encoded message: ");
+    fgets(ciphertext, sizeof(ciphertext), stdin);
+
+    printf("Enter the Playfair key: ");
+    fgets(key, sizeof(key), stdin);
+
+    // Removing newline characters from the input strings
+    ciphertext[strcspn(ciphertext, "\n")] = '\0';
+    key[strcspn(key, "\n")] = '\0';
+
+    // Call the decryption function
+    decryptPlayfair(ciphertext, key);
+
+    return 0;
+}
